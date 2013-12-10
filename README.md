@@ -3,7 +3,7 @@ Design: Polaris
 
 This is the most up-to-date source code of the Polaris Design for [Cargo](http://cargocollective.com).
 
-[Example Design](http://cargocollective.com/polaris)
+[Example Design](http://cargocollective.com/polaris)  
 [Developer documentation](http://cargocollective.com/developers/documentation)
 
 License
