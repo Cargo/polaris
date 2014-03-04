@@ -3,6 +3,18 @@
  */
 
 var Design = {
+	bindKeys : function() {
+		Cargo.Core.KeyboardShortcut.Add("Left", 37, function() {
+			Action.Project.Prev();
+			return false;
+		});
+
+		Cargo.Core.KeyboardShortcut.Add("Right", 39, function() {
+			Action.Project.Next();
+			return false;
+		});
+	},
+	
 	hoverProject: function() {
 		// Thumbnail hover
 		$(".thumbnails")
@@ -92,16 +104,7 @@ var Design = {
 $(function() {
 	Cargo.Core.ReplaceLoadingAnims.init();
 
-	Cargo.Core.KeyboardShortcut.Add("Left", 37, function() {
-		Action.Project.Prev();
-		return false;
-	});
-
-	Cargo.Core.KeyboardShortcut.Add("Right", 39, function() {
-		Action.Project.Next();
-		return false;
-	});
-
+	Design.bindKeys();
 	Design.hoverProject();
 	Design.checkSetSpacing();
 	Design.checkNavigationHeight();
@@ -156,6 +159,10 @@ Cargo.Event.on("pagination_complete", function(new_page) {
 	window.setTimeout(function() {
 		Design.checkNavigationHeight();
 	}, 10);
+});
+
+Cargo.Event.on("fullscreen_destroy_hotkeys", function() {
+    Design.bindKeys();
 });
 
 /**
