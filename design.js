@@ -160,6 +160,14 @@ Cargo.Event.on("pagination_complete", function(new_page) {
 	}, 10);
 });
 
+Cargo.Event.on("project_collection_reset" function(new_page) {
+	Design.checkSetVisibility();
+	Design.checkSetSpacing();
+	window.setTimeout(function() {
+		Design.checkNavigationHeight();
+	}, 10);
+});
+
 Cargo.Event.on("fullscreen_destroy_hotkeys", function() {
     Design.bindKeys();
 });
