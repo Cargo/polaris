@@ -119,9 +119,8 @@ $(window).resize(function() {
 Cargo.Event.on("project_load_complete", function(pid) {
 	Design.checkSetVisibility();
 
-	/**
-	 *   Move the project navigation if the default image widht is > 670px.
-	 *   This is a quick fix and needs some refinement.
+	/*
+	 *   Move the project navigation if the default image width is > 670px.
 	 */
 	
 	var defaultImageWidth = parseInt(Cargo.Model.DisplayOptions.GetImageWidth());
